@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports | Daycare Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dashboard-page">
+
+    <div class="dashboard-layout">
+
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <h2>Little Steps</h2>
+                <p>Daycare Management</p>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="admin-dashboard.html">Dashboard</a>
+                <a href="children.html">Child Records</a>
+                <a href="staff.html">Staff Records</a>
+                <a href="attendance.html">Attendance</a>
+                <a href="payments.html">Payments</a>
+                <a href="notices.html">Communication</a>
+                <a href="reports.html" class="active">Reports</a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <a href="index.html">Sign Out</a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+
+            <header class="topbar">
+                <div>
+                    <p class="eyebrow">ADMINISTRATION</p>
+                    <h1>Reports</h1>
+                </div>
+                <div class="topbar-user">
+                    <span>Administrator</span>
+                </div>
+            </header>
+
+            <section class="page-banner">
+                <div>
+                    <p class="eyebrow">RECORDS AND PERFORMANCE</p>
+                    <h2>Daycare Reports</h2>
+                    <p>Generate and review attendance and payment summaries.</p>
+                </div>
+            </section>
+
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <p>Total Registered Children</p>
+                    <h2>48</h2>
+                    <span>Currently enrolled</span>
+                </div>
+
+                <div class="stat-card">
+                    <p>Attendance Rate</p>
+                    <h2>87.5%</h2>
+                    <span>Today's attendance</span>
+                </div>
+
+                <div class="stat-card">
+                    <p>Payments Received</p>
+                    <h2>KSh 557,500</h2>
+                    <span>Total recorded payments</span>
+                </div>
+
+                <div class="stat-card">
+                    <p>Outstanding Fees</p>
+                    <h2>KSh 18,500</h2>
+                    <span>Pending payment</span>
+                </div>
+            </section>
+
+            <section class="content-panel">
+                <div class="panel-heading">
+                    <div>
+                        <h2>Generate a Report</h2>
+                        <p>Select the type of report you want to view.</p>
+                    </div>
+                </div>
+
+                <form id="reportForm">
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="reportType">Report Type</label>
+                            <select id="reportType" required>
+                                <option value="">Select report type</option>
+                                <option value="attendance">Attendance Report</option>
+                                <option value="payments">Payment Report</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reportMonth">Reporting Month</label>
+                            <select id="reportMonth" required>
+                                <option value="">Select month</option>
+                                <option value="January">January</option>
+                                <option value="February">February</option>
+                                <option value="March">March</option>
+                                <option value="April">April</option>
+                                <option value="May">May</option>
+                                <option value="June">June</option>
+                                <option value="July">July</option>
+                                <option value="August">August</option>
+                                <option value="September">September</option>
+                                <option value="October">October</option>
+                                <option value="November" selected>November</option>
+                                <option value="December">December</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="primary-button">
+                            Generate Report
+                        </button>
+                    </div>
+
+                    <p id="reportMessage" class="form-message"></p>
+                </form>
+            </section>
+
+            <section class="content-panel">
+                <div class="panel-heading">
+                    <div>
+                        <h2 id="reportTitle">Monthly Report Overview</h2>
+                        <p id="reportDescription">Select a report type and month to generate a report.</p>
+                    </div>
+                </div>
+
+                <div id="reportResults">
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Report Category</th>
+                                    <th>Details</th>
+                                    <th>Summary</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Attendance</td>
+                                    <td>Children present today</td>
+                                    <td>42 out of 48</td>
+                                </tr>
+                                <tr>
+                                    <td>Payments</td>
+                                    <td>Total payments received</td>
+                                    <td>KSh 557,500</td>
+                                </tr>
+                                <tr>
+                                    <td>Fees</td>
+                                    <td>Outstanding fee balance</td>
+                                    <td>KSh 18,500</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" id="downloadReport" class="primary-button">
+                        Download Report
+                    </button>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="js/prototype.js"></script>
+</body>
+</html>

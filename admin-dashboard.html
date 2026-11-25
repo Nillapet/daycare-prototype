@@ -1,0 +1,276 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrator Dashboard | Daycare Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dashboard-page">
+
+    <div class="app-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="sidebar-brand">
+                <div class="sidebar-logo">D</div>
+                <div>
+                    <h2>Daycare MS</h2>
+                    <span>Management Portal</span>
+                </div>
+            </div>
+
+            <div class="sidebar-user">
+                <div class="user-avatar">A</div>
+                <div>
+                    <strong id="adminName">Administrator</strong>
+                    <small>Administrator</small>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <span class="nav-heading">MAIN MENU</span>
+
+                <a href="admin-dashboard.html" class="nav-link active">
+                    <span>▦</span> Dashboard
+                </a>
+
+                <a href="children.html" class="nav-link">
+                    <span>♧</span> Children Records
+                </a>
+
+                <a href="staff.html" class="nav-link">
+                    <span>♙</span> Staff Records
+                </a>
+
+                <a href="attendance-overview.html" class="nav-link">
+                    <span>✓</span> Attendance Overview
+                </a>
+
+                <a href="payments.html" class="nav-link">
+                    <span>▤</span> Fee Management
+                </a>
+
+                <a href="notices.html" class="nav-link">
+                    <span>✉</span> Notices
+                </a>
+
+                <a href="reports.html" class="nav-link">
+                    <span>▥</span> Reports
+                </a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <a href="index.html" class="nav-link logout-link">
+                    <span>↪</span> Sign Out
+                </a>
+            </div>
+
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <header class="topbar">
+                <div>
+                    <h2>Administrator Dashboard</h2>
+                    <p>Welcome back! Here's an overview of your daycare.</p>
+                </div>
+
+                <div class="topbar-date" id="currentDate"></div>
+            </header>
+
+            <section class="page-content">
+
+                <div class="welcome-banner">
+                    <div>
+                        <span>DAYCARE MANAGEMENT</span>
+                        <h1>Manage Your Daycare With Ease</h1>
+                        <p>
+                            Keep track of children, staff, attendance,
+                            payments and parent communication.
+                        </p>
+                    </div>
+                    <div class="welcome-icon">✦</div>
+                </div>
+
+                <!-- STATISTICS -->
+                <section class="statistics-grid">
+
+                    <div class="stat-card">
+                        <div class="stat-icon purple-icon">♧</div>
+                        <div>
+                            <p>Registered Children</p>
+                            <h2>48</h2>
+                            <small>Currently enrolled</small>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon blue-icon">♙</div>
+                        <div>
+                            <p>Daycare Staff</p>
+                            <h2>8</h2>
+                            <small>Registered staff members</small>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon green-icon">✓</div>
+                        <div>
+                            <p>Present Today</p>
+                            <h2 id="presentCount">42</h2>
+                            <small>Children present</small>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon pink-icon">▤</div>
+                        <div>
+                            <p>Outstanding Fees</p>
+                            <h2>KSh 18,500</h2>
+                            <small>Pending fee balances</small>
+                        </div>
+                    </div>
+
+                </section>
+
+                <!-- QUICK ACTIONS -->
+                <section class="content-section">
+
+                    <div class="section-heading">
+                        <div>
+                            <h2>Quick Actions</h2>
+                            <p>Access common management activities.</p>
+                        </div>
+                    </div>
+
+                    <div class="quick-actions">
+
+                        <a href="children.html" class="action-card">
+                            <span class="action-icon">♧</span>
+                            <strong>Children Records</strong>
+                            <small>View registered children</small>
+                        </a>
+
+                        <a href="attendance-overview.html" class="action-card">
+                            <span class="action-icon">✓</span>
+                            <strong>Attendance Overview</strong>
+                            <small>Monitor class attendance</small>
+                        </a>
+
+                        <a href="payments.html" class="action-card">
+                            <span class="action-icon">▤</span>
+                            <strong>Record Payment</strong>
+                            <small>Update fee records</small>
+                        </a>
+
+                        <a href="notices.html" class="action-card">
+                            <span class="action-icon">✉</span>
+                            <strong>Send Notice</strong>
+                            <small>Communicate with parents</small>
+                        </a>
+
+                    </div>
+                </section>
+
+                <!-- RECENT ACTIVITY -->
+                <section class="content-section dashboard-columns">
+
+                    <div class="panel" id="children">
+                        <div class="panel-heading">
+                            <div>
+                                <h2>Recent Child Records</h2>
+                                <p>Sample registered children</p>
+                            </div>
+                            <a href="children.html" class="view-label">View Records</a>
+                        </div>
+
+                        <div class="table-wrapper">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Child Name</th>
+                                        <th>Age</th>
+                                        <th>Parent</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Amani Otieno</td>
+                                        <td>4 years</td>
+                                        <td>Mary Otieno</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Brian Mwangi</td>
+                                        <td>3 years</td>
+                                        <td>John Mwangi</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Faith Wanjiku</td>
+                                        <td>5 years</td>
+                                        <td>Grace Wanjiku</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Kevin Ochieng</td>
+                                        <td>4 years</td>
+                                        <td>Sarah Ochieng</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="panel" id="staff">
+                        <div class="panel-heading">
+                            <div>
+                                <h2>Staff Overview</h2>
+                                <p>Sample daycare staff</p>
+                            </div>
+                            <a href="staff.html" class="view-label">View Staff</a>
+                        </div>
+
+                        <div class="staff-item">
+                            <div class="staff-avatar">JM</div>
+                            <div>
+                                <strong>Jane Muthoni</strong>
+                                <small>Daycare Teacher</small>
+                            </div>
+                            <span class="status-badge present">Active</span>
+                        </div>
+
+                        <div class="staff-item">
+                            <div class="staff-avatar">PO</div>
+                            <div>
+                                <strong>Peter Otieno</strong>
+                                <small>Daycare Teacher</small>
+                            </div>
+                            <span class="status-badge present">Active</span>
+                        </div>
+
+                        <div class="staff-item">
+                            <div class="staff-avatar">AM</div>
+                            <div>
+                                <strong>Anne Mwende</strong>
+                                <small>Daycare Assistant</small>
+                            </div>
+                            <span class="status-badge present">Active</span>
+                        </div>
+                    </div>
+
+                </section>
+
+                <footer class="dashboard-footer">
+                    Daycare Management System · Prototype Demonstration
+                </footer>
+
+            </section>
+
+        </main>
+    </div>
+
+    <script src="js/prototype.js"></script>
+</body>
+</html>

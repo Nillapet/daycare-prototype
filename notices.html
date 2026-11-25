@@ -1,0 +1,407 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notices and Communication | Daycare Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="dashboard-page">
+
+<div class="app-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="sidebar-brand">
+            <div class="sidebar-logo">D</div>
+            <div>
+                <h2>Daycare MS</h2>
+                <span>Management Portal</span>
+            </div>
+        </div>
+
+        <div class="sidebar-user">
+            <div class="user-avatar" id="noticeAvatar">U</div>
+            <div>
+                <strong id="noticeUserName">User</strong>
+                <small id="noticeUserRole">User</small>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav" id="noticeSidebarNav">
+            <!-- Navigation is loaded according to the logged-in role. -->
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="index.html" class="nav-link logout-link" id="noticeSignOut">
+                Sign Out
+            </a>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <h2>Notices and Communication</h2>
+                <p>Important daycare announcements and updates.</p>
+            </div>
+
+            <div class="user-info">
+                <span id="noticeTopRole">User</span>
+            </div>
+        </header>
+
+
+        <section class="page-content">
+
+            <!-- WELCOME SECTION -->
+            <section class="welcome-banner">
+                <div>
+                    <h1 id="noticeWelcome">Daycare Communication</h1>
+                    <p id="noticeIntroduction">
+                        Stay informed about important daycare announcements.
+                    </p>
+                </div>
+            </section>
+
+
+            <!-- SUMMARY CARDS -->
+            <section class="statistics-grid">
+
+                <div class="stat-card">
+                    <h3>Published Notices</h3>
+                    <h2 id="noticeCount">3</h2>
+                    <p>Available announcements</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Communication</h3>
+                    <h2>SMS</h2>
+                    <p>Planned notification channel</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Notice Access</h3>
+                    <h2 id="noticeAccess">View</h2>
+                    <p id="noticeAccessDescription">Published announcements</p>
+                </div>
+
+            </section>
+
+
+            <!-- CREATE NOTICE -->
+            <section class="content-section" id="createNoticeSection">
+
+                <div class="panel-heading">
+                    <div>
+                        <h2>Create a New Notice</h2>
+                        <p>Share important information with parents and guardians.</p>
+                    </div>
+                </div>
+
+                <div class="content-panel">
+
+                    <form id="noticeForm">
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+                                <label for="noticeTitle">Notice Title</label>
+                                <input
+                                    type="text"
+                                    id="noticeTitle"
+                                    required
+                                    maxlength="100"
+                                    placeholder="Enter notice title">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="noticeCategory">Notice Category</label>
+                                <select id="noticeCategory" required>
+                                    <option value="">Select category</option>
+                                    <option value="General Announcement">General Announcement</option>
+                                    <option value="Fee Reminder">Fee Reminder</option>
+                                    <option value="Parents' Meeting">Parents' Meeting</option>
+                                    <option value="School Activity">School Activity</option>
+                                    <option value="Class Update">Class Update</option>
+                                    <option value="Child Update">Child Update</option>
+                                    <option value="Emergency Notice">Emergency Notice</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="noticeAudience">Recipients</label>
+                                <select id="noticeAudience" required>
+                                    <option value="">Select recipients</option>
+                                    <option value="All Parents">All Parents</option>
+                                    <option value="Baby Class Parents">Baby Class Parents</option>
+                                    <option value="Toddlers Parents">Toddlers Parents</option>
+                                    <option value="Pre-Primary Parents">Pre-Primary Parents</option>
+                                    <option value="Individual Parent">Individual Parent</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group" id="individualParentGroup" style="display:none;">
+                                <label for="noticeParent">Select Parent</label>
+                                <select id="noticeParent">
+                                    <option value="">Select a parent</option>
+                                    <option value="Mary Wanjiku">Mary Wanjiku</option>
+                                    <option value="Peter Otieno">Peter Otieno</option>
+                                    <option value="Jane Akinyi">Jane Akinyi</option>
+                                    <option value="Grace Mwangi">Grace Mwangi</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="noticeDate">Notice Date</label>
+                                <input type="date" id="noticeDate" required>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="noticeContent">Notice Message</label>
+                            <textarea
+                                id="noticeContent"
+                                rows="5"
+                                required
+                                maxlength="1000"
+                                placeholder="Write your announcement or message here..."></textarea>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="primary-button">
+                                Publish Notice
+                            </button>
+                        </div>
+
+                        <p id="noticeMessage" class="form-message"></p>
+
+                    </form>
+
+                </div>
+
+            </section>
+
+
+            <!-- PUBLISHED NOTICES -->
+            <section class="content-section">
+
+                <div class="panel-heading">
+                    <div>
+                        <h2>Published Notices</h2>
+                        <p id="publishedNoticeDescription">
+                            Announcements and communication history.
+                        </p>
+                    </div>
+                </div>
+
+                <div id="noticesList">
+
+                    <div class="content-panel">
+                        <h3>Parents' Meeting</h3>
+                        <p><strong>Category:</strong> Parents' Meeting</p>
+                        <p><strong>Recipients:</strong> All Parents</p>
+                        <p><strong>Date:</strong> 10 Nov 2026</p>
+                        <p>
+                            Parents are invited to attend a meeting at the
+                            daycare centre on 20 November at 10:00 AM.
+                        </p>
+                        <span class="status-badge success">Published</span>
+                    </div>
+
+                    <div class="content-panel">
+                        <h3>November Fee Reminder</h3>
+                        <p><strong>Category:</strong> Fee Reminder</p>
+                        <p><strong>Recipients:</strong> All Parents</p>
+                        <p><strong>Date:</strong> 08 Nov 2026</p>
+                        <p>
+                            Please remember to clear any outstanding daycare
+                            fees before the end of November.
+                        </p>
+                        <span class="status-badge success">Published</span>
+                    </div>
+
+                    <div class="content-panel">
+                        <h3>Children's Activity Day</h3>
+                        <p><strong>Category:</strong> School Activity</p>
+                        <p><strong>Recipients:</strong> Toddlers Parents</p>
+                        <p><strong>Date:</strong> 05 Nov 2026</p>
+                        <p>
+                            Our children's activity day will take place on
+                            25 November. More details will be shared soon.
+                        </p>
+                        <span class="status-badge success">Published</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <footer class="dashboard-footer">
+                <p>Daycare Management System | Notices and Communication</p>
+            </footer>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="js/prototype.js"></script>
+
+<script>
+/* ROLE-BASED NOTICE PAGE DISPLAY */
+
+const currentNoticeUser = sessionStorage.getItem("daycareUser");
+
+if (!currentNoticeUser) {
+    window.location.href = "index.html";
+} else {
+
+    const user = JSON.parse(currentNoticeUser);
+
+    const role = user.role;
+    const fullName = user.fullName || "User";
+
+    const sidebarNav = document.getElementById("noticeSidebarNav");
+    const createNoticeSection = document.getElementById("createNoticeSection");
+
+    document.getElementById("noticeUserName").textContent = fullName;
+    document.getElementById("noticeUserRole").textContent =
+        role === "admin" ? "Administrator" :
+        role === "staff" ? "Daycare Staff" :
+        "Parent / Guardian";
+
+    document.getElementById("noticeAvatar").textContent =
+        fullName.charAt(0).toUpperCase();
+
+    document.getElementById("noticeTopRole").textContent =
+        role === "admin" ? "Administrator" :
+        role === "staff" ? "Daycare Staff" :
+        "Parent / Guardian";
+
+    let navigation = "";
+
+    if (role === "admin") {
+
+        navigation = `
+            <span class="nav-heading">ADMINISTRATOR MENU</span>
+            <a href="admin-dashboard.html" class="nav-link">Dashboard</a>
+            <a href="children.html" class="nav-link">Child Records</a>
+            <a href="staff.html" class="nav-link">Staff Records</a>
+            <a href="attendance.html" class="nav-link">Attendance</a>
+            <a href="payments.html" class="nav-link">Fees and Payments</a>
+            <a href="notices.html" class="nav-link active">Notices</a>
+            <a href="reports.html" class="nav-link">Reports</a>
+        `;
+
+        document.getElementById("noticeWelcome").textContent =
+            "Parent Communication";
+
+        document.getElementById("noticeIntroduction").textContent =
+            "Create announcements, fee reminders and important daycare updates.";
+
+        document.getElementById("noticeAccess").textContent = "Manage";
+
+        document.getElementById("noticeAccessDescription").textContent =
+            "Full notice management";
+
+    } else if (role === "staff") {
+
+        navigation = `
+            <span class="nav-heading">STAFF MENU</span>
+            <a href="staff-dashboard.html" class="nav-link">Dashboard</a>
+            <a href="attendance.html" class="nav-link">Record Attendance</a>
+            <a href="notices.html" class="nav-link active">Notices</a>
+        `;
+
+        document.getElementById("noticeWelcome").textContent =
+            "Staff Communication";
+
+        document.getElementById("noticeIntroduction").textContent =
+            "Share class updates and important information with parents.";
+
+        document.getElementById("noticeAccess").textContent = "Create";
+
+        document.getElementById("noticeAccessDescription").textContent =
+            "Publish and view notices";
+
+    } else if (role === "parent") {
+
+        navigation = `
+            <span class="nav-heading">PARENT MENU</span>
+            <a href="parent-dashboard.html" class="nav-link">My Dashboard</a>
+            <a href="parent-dashboard.html#child-information" class="nav-link">Child Information</a>
+            <a href="parent-dashboard.html#attendance" class="nav-link">Attendance</a>
+            <a href="parent-dashboard.html#fees" class="nav-link">Fee Information</a>
+            <a href="notices.html" class="nav-link active">Notices</a>
+        `;
+
+        createNoticeSection.style.display = "none";
+
+        document.getElementById("noticeWelcome").textContent =
+            "Daycare Announcements";
+
+        document.getElementById("noticeIntroduction").textContent =
+            "View important announcements and updates from your daycare.";
+
+        document.getElementById("noticeAccess").textContent = "View";
+
+        document.getElementById("noticeAccessDescription").textContent =
+            "Published notices only";
+
+        document.getElementById("publishedNoticeDescription").textContent =
+            "Announcements relevant to your child.";
+
+    } else {
+        window.location.href = "index.html";
+    }
+
+    sidebarNav.innerHTML = navigation;
+
+}
+
+
+/* INDIVIDUAL PARENT SELECTION */
+
+const noticeAudience = document.getElementById("noticeAudience");
+const individualParentGroup = document.getElementById("individualParentGroup");
+const noticeParent = document.getElementById("noticeParent");
+
+if (noticeAudience) {
+
+    noticeAudience.addEventListener("change", function() {
+
+        if (this.value === "Individual Parent") {
+            individualParentGroup.style.display = "block";
+            noticeParent.required = true;
+        } else {
+            individualParentGroup.style.display = "none";
+            noticeParent.required = false;
+            noticeParent.value = "";
+        }
+
+    });
+
+}
+
+
+/* CLEAR SESSION WHEN SIGNING OUT */
+
+document.getElementById("noticeSignOut").addEventListener("click", function() {
+    sessionStorage.removeItem("daycareUser");
+});
+</script>
+
+</body>
+</html>

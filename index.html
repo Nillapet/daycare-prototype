@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daycare Management System | Login</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="login-page">
+
+    <main class="login-container">
+
+        <section class="login-brand">
+            <div class="brand-content">
+                <div class="brand-logo">D</div>
+                <h1>Daycare Management System</h1>
+                <p>
+                    Supporting better daycare management through
+                    organised records, attendance tracking and
+                    parent communication.
+                </p>
+
+                <div class="brand-footer">
+                    Caring for children. Connecting families.
+                </div>
+            </div>
+        </section>
+
+        <section class="login-form-section">
+            <div class="login-form">
+
+                <span class="welcome-label">WELCOME BACK</span>
+                <h2>Sign in to your account</h2>
+                <p class="form-description">
+                    Enter your details and select your user role.
+                </p>
+
+                <form id="loginForm">
+
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input
+                            type="text"
+                            id="fullName"
+                            placeholder="Enter your full name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email address"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Enter your password"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="role">Select Your Role</label>
+                        <select id="role" required>
+                            <option value="">Choose your role</option>
+                            <option value="admin">Administrator</option>
+                            <option value="staff">Daycare Staff</option>
+                            <option value="parent">Parent / Guardian</option>
+                        </select>
+                    </div>
+
+                    <p id="loginMessage" class="login-message"></p>
+
+                    <button type="submit" class="primary-button">
+                        Sign In
+                        <span>→</span>
+                    </button>
+
+                </form>
+
+                <p class="demo-note">
+                    Prototype demonstration · Use any sample details
+                </p>
+
+            </div>
+        </section>
+
+    </main>
+
+    <script src="js/prototype.js"></script>
+</body>
+</html>

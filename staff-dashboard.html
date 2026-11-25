@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Dashboard | Daycare Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="dashboard-page">
+
+<div class="app-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="sidebar-brand">
+            <div class="sidebar-logo">D</div>
+            <div>
+                <h2>Daycare MS</h2>
+                <span>Management Portal</span>
+            </div>
+        </div>
+
+        <div class="sidebar-user">
+            <div class="user-avatar">S</div>
+            <div>
+                <strong id="staffName">Daycare Staff</strong>
+                <small>Daycare Staff</small>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <span class="nav-heading">STAFF MENU</span>
+
+            <a href="staff-dashboard.html" class="nav-link active">
+                Dashboard
+            </a>
+
+            <a href="attendance.html" class="nav-link">
+                Record Attendance
+            </a>
+
+            <a href="notices.html" class="nav-link">
+                Notices
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="index.html" class="nav-link logout-link">
+                Sign Out
+            </a>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <h2>Staff Dashboard</h2>
+                <p>Daycare operations and daily activities.</p>
+            </div>
+
+            <div class="user-info">
+                <span>Daycare Staff</span>
+            </div>
+        </header>
+
+
+        <section class="page-content">
+
+            <!-- WELCOME SECTION -->
+            <section class="welcome-banner">
+                <div>
+                    <h1>
+                        Welcome, <span id="staffWelcome">Staff Member</span>!
+                    </h1>
+
+                    <p>
+                        Manage children's attendance and keep track
+                        of daily daycare activities.
+                    </p>
+                </div>
+            </section>
+
+
+            <!-- SUMMARY CARDS -->
+            <section class="statistics-grid">
+
+                <div class="stat-card">
+                    <h3>Registered Children</h3>
+                    <h2>48</h2>
+                    <p>Children under care</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Present Today</h3>
+                    <h2>42</h2>
+                    <p>Children checked in</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Absent Today</h3>
+                    <h2>6</h2>
+                    <p>Children not present</p>
+                </div>
+
+            </section>
+
+
+            <!-- DAILY ACTIVITIES -->
+            <section class="content-section">
+
+                <div class="panel-heading">
+                    <div>
+                        <h2>Daily Activities</h2>
+                        <p>Access the main tasks assigned to daycare staff.</p>
+                    </div>
+                </div>
+
+                <div class="quick-actions-grid">
+
+                    <a href="attendance.html" class="action-card">
+                        <h3>Record Attendance</h3>
+
+                        <p>
+                            Mark children as present, absent or late
+                            and maintain daily attendance records.
+                        </p>
+
+                        <span>Open Attendance →</span>
+                    </a>
+
+                    <a href="notices.html" class="action-card">
+                        <h3>View Notices</h3>
+
+                        <p>
+                            View announcements, important reminders
+                            and updates from the daycare administration.
+                        </p>
+
+                        <span>View Notices →</span>
+                    </a>
+
+                </div>
+
+            </section>
+
+
+            <!-- CHILDREN OVERVIEW -->
+            <section class="content-section">
+
+                <div class="panel-heading">
+                    <div>
+                        <h2>Children Overview</h2>
+                        <p>Sample attendance records for children under care.</p>
+                    </div>
+
+                    <span>Today's Records</span>
+                </div>
+
+                <div class="table-wrapper">
+
+                    <table class="data-table">
+
+                        <thead>
+                            <tr>
+                                <th>Child Name</th>
+                                <th>Class</th>
+                                <th>Attendance</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>Amara Wanjiku</td>
+                                <td>Toddlers</td>
+                                <td>
+                                    <span class="status-badge success">
+                                        Present
+                                    </span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Brian Otieno</td>
+                                <td>Pre-Primary</td>
+                                <td>
+                                    <span class="status-badge success">
+                                        Present
+                                    </span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Faith Akinyi</td>
+                                <td>Baby Class</td>
+                                <td>
+                                    <span class="status-badge danger">
+                                        Absent
+                                    </span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Daniel Mwangi</td>
+                                <td>Toddlers</td>
+                                <td>
+                                    <span class="status-badge success">
+                                        Present
+                                    </span>
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- FOOTER -->
+            <footer class="dashboard-footer">
+                <p>
+                    Daycare Management System | Staff Dashboard
+                </p>
+            </footer>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="js/prototype.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fees and Payments | Daycare Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="dashboard-layout">
+
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <h2>DayCare</h2>
+            <p>Management System</p>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="admin-dashboard.html">Dashboard</a>
+            <a href="children.html">Child Records</a>
+            <a href="staff.html">Staff Records</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="payments.html" class="active">Fees and Payments</a>
+            <a href="notices.html">Notices</a>
+            <a href="index.html">Sign Out</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <h2>Fees and Payments</h2>
+                <p>Record payments and monitor daycare fee balances.</p>
+            </div>
+            <div class="user-info">
+                <span>Administrator</span>
+            </div>
+        </header>
+
+        <section class="welcome-banner">
+            <div>
+                <h1>Payment Management</h1>
+                <p>Keep track of payments received and outstanding fees for registered children.</p>
+            </div>
+        </section>
+
+        <!-- FINANCIAL SUMMARY -->
+        <section class="stats-grid">
+
+            <div class="stat-card">
+                <h3>Total Fees Expected</h3>
+                <h2>KSh 576,000</h2>
+                <p>November 2026</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Payments Received</h3>
+                <h2>KSh 557,500</h2>
+                <p>Recorded payments</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Outstanding Fees</h3>
+                <h2 id="outstandingBalance">KSh 18,500</h2>
+                <p>Pending payment</p>
+            </div>
+
+        </section>
+
+        <!-- PAYMENT FORM -->
+        <section class="panel">
+
+            <div class="panel-header">
+                <h2>Record a Payment</h2>
+                <span>Payment Entry</span>
+            </div>
+
+            <form id="paymentForm">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="paymentChild">Select Child</label>
+                        <select id="paymentChild" required>
+                            <option value="">Select child</option>
+                            <option value="Amara Wanjiku">Amara Wanjiku - CH001</option>
+                            <option value="Brian Otieno">Brian Otieno - CH002</option>
+                            <option value="Faith Akinyi">Faith Akinyi - CH003</option>
+                            <option value="Daniel Mwangi">Daniel Mwangi - CH004</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="paymentAmount">Amount Paid (KSh)</label>
+                        <input type="number" id="paymentAmount"
+                               min="1" step="1" required
+                               placeholder="Enter amount">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="paymentDate">Payment Date</label>
+                        <input type="date" id="paymentDate" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="paymentMethod">Payment Method</label>
+                        <select id="paymentMethod" required>
+                            <option value="">Select method</option>
+                            <option value="M-Pesa">M-Pesa</option>
+                            <option value="Cash">Cash</option>
+                            <option value="Bank Transfer">Bank Transfer</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="transactionReference">M-Pesa / Transaction Reference</label>
+                        <input type="text" id="transactionReference"
+                               placeholder="e.g. QWE1234567">
+                    </div>
+
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="primary-button">
+                        Record Payment
+                    </button>
+                </div>
+
+                <p id="paymentMessage" class="form-message"></p>
+
+            </form>
+        </section>
+
+        <!-- PAYMENT RECORDS -->
+        <section class="panel">
+
+            <div class="panel-header">
+                <h2>Recent Payment Records</h2>
+                <span>November 2026</span>
+            </div>
+
+            <div class="table-responsive">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Payment ID</th>
+                            <th>Child Name</th>
+                            <th>Amount (KSh)</th>
+                            <th>Payment Date</th>
+                            <th>Method</th>
+                            <th>Reference</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="paymentsTableBody">
+
+                        <tr>
+                            <td>PAY001</td>
+                            <td>Amara Wanjiku</td>
+                            <td>8,500</td>
+                            <td>03 Nov 2026</td>
+                            <td>M-Pesa</td>
+                            <td>QWE1234567</td>
+                            <td><span class="status-badge success">Recorded</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>PAY002</td>
+                            <td>Brian Otieno</td>
+                            <td>12,000</td>
+                            <td>04 Nov 2026</td>
+                            <td>Bank Transfer</td>
+                            <td>BNK45678</td>
+                            <td><span class="status-badge success">Recorded</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>PAY003</td>
+                            <td>Faith Akinyi</td>
+                            <td>6,000</td>
+                            <td>06 Nov 2026</td>
+                            <td>Cash</td>
+                            <td>CASH003</td>
+                            <td><span class="status-badge success">Recorded</span></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+        <div class="back-link">
+            <a href="admin-dashboard.html">← Back to Administrator Dashboard</a>
+        </div>
+
+    </main>
+</div>
+
+<script src="js/prototype.js"></script>
+</body>
+</html>

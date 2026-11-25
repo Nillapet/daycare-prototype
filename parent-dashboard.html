@@ -1,0 +1,338 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parent Dashboard | Daycare Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="dashboard-page">
+
+<div class="app-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="sidebar-brand">
+            <div class="sidebar-logo">D</div>
+            <div>
+                <h2>Daycare MS</h2>
+                <span>Management Portal</span>
+            </div>
+        </div>
+
+        <div class="sidebar-user">
+            <div class="user-avatar">P</div>
+            <div>
+                <strong>Mary Wanjiku</strong>
+                <small>Parent / Guardian</small>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <span class="nav-heading">PARENT MENU</span>
+
+            <a href="parent-dashboard.html" class="nav-link active">
+                My Dashboard
+            </a>
+
+            <a href="#child-information" class="nav-link">
+                Child Information
+            </a>
+
+            <a href="#attendance" class="nav-link">
+                Attendance
+            </a>
+
+            <a href="#fees" class="nav-link">
+                Fee Information
+            </a>
+
+            <a href="#notices" class="nav-link">
+                Notices
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="index.html" class="nav-link logout-link">
+                Sign Out
+            </a>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <h2>Parent Dashboard</h2>
+                <p>Stay updated on your child's daycare activities.</p>
+            </div>
+
+            <div class="user-info">
+                <span>Parent / Guardian</span>
+            </div>
+        </header>
+
+
+        <section class="page-content">
+
+            <!-- WELCOME SECTION -->
+            <section class="welcome-banner">
+                <div>
+                    <h1>Welcome, Mrs. Wanjiku!</h1>
+                    <p>
+                        Here is an overview of your child's progress
+                        and daycare information.
+                    </p>
+                </div>
+            </section>
+
+
+            <!-- CHILD INFORMATION -->
+            <section class="content-section" id="child-information">
+
+                <div class="panel-heading">
+                    <div>
+                        <h2>Child Information</h2>
+                        <p>Details of your registered child.</p>
+                    </div>
+                </div>
+
+                <div class="dashboard-columns">
+
+                    <div class="content-panel">
+                        <h3>Amara Wanjiku</h3>
+
+                        <p><strong>Child ID:</strong> CH001</p>
+                        <p><strong>Class:</strong> Toddlers</p>
+                        <p><strong>Age:</strong> 3 years</p>
+                        <p><strong>Parent:</strong> Mary Wanjiku</p>
+                    </div>
+
+                    <div class="content-panel">
+                        <h3>Daycare Details</h3>
+
+                        <p><strong>Centre:</strong> Little Stars Daycare</p>
+                        <p><strong>Academic Year:</strong> 2026</p>
+                        <p><strong>Class Teacher:</strong> Grace Atieno</p>
+                        <p><strong>Contact:</strong> 0712 345 678</p>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- SUMMARY CARDS -->
+            <section class="statistics-grid">
+
+                <div class="stat-card">
+                    <h3>Attendance</h3>
+                    <h2>92%</h2>
+                    <p>Attendance this month</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Fee Balance</h3>
+                    <h2>KSh 3,500</h2>
+                    <p>Outstanding amount</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Latest Updates</h3>
+                    <h2>2</h2>
+                    <p>Recent daycare notices</p>
+                </div>
+
+            </section>
+
+
+            <!-- ATTENDANCE -->
+            <section class="content-section" id="attendance">
+
+                <div class="panel-heading">
+                    <div>
+                        <h2>Recent Attendance</h2>
+                        <p>Attendance records for your child.</p>
+                    </div>
+
+                    <span>November 2026</span>
+                </div>
+
+                <div class="table-wrapper">
+
+                    <table class="data-table">
+
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Child</th>
+                                <th>Class</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>12 Nov 2026</td>
+                                <td>Amara Wanjiku</td>
+                                <td>Toddlers</td>
+                                <td>
+                                    <span class="status-badge success">
+                                        Present
+                                    </span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>11 Nov 2026</td>
+                                <td>Amara Wanjiku</td>
+                                <td>Toddlers</td>
+                                <td>
+                                    <span class="status-badge success">
+                                        Present
+                                    </span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>10 Nov 2026</td>
+                                <td>Amara Wanjiku</td>
+                                <td>Toddlers</td>
+                                <td>
+                                    <span class="status-badge danger">
+                                        Absent
+                                    </span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>9 Nov 2026</td>
+                                <td>Amara Wanjiku</td>
+                                <td>Toddlers</td>
+                                <td>
+                                    <span class="status-badge success">
+                                        Present
+                                    </span>
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- FEES -->
+            <section class="content-section" id="fees">
+
+                <div class="panel-heading">
+                    <div>
+                        <h2>Fee Information</h2>
+                        <p>View your child's fee statement and payment details.</p>
+                    </div>
+
+                    <span>November 2026</span>
+                </div>
+
+                <div class="dashboard-columns">
+
+                    <div class="content-panel">
+                        <h3>Fee Statement</h3>
+
+                        <p><strong>Total Fees:</strong> KSh 12,000</p>
+                        <p><strong>Amount Paid:</strong> KSh 8,500</p>
+                        <p><strong>Outstanding Balance:</strong> KSh 3,500</p>
+
+                        <p>
+                            <strong>Payment Status:</strong>
+                            <span class="status-badge warning">
+                                Partially Paid
+                            </span>
+                        </p>
+                    </div>
+
+                    <div class="content-panel">
+                        <h3>Payment Instructions</h3>
+
+                        <p>
+                            Payments can be made through the daycare's
+                            designated M-Pesa payment channel.
+                        </p>
+
+                        <p>
+                            After making payment, share your transaction
+                            reference with the daycare office for verification.
+                        </p>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- NOTICES -->
+            <section class="content-section" id="notices">
+
+                <div class="panel-heading">
+                    <div>
+                        <h2>Recent Notices</h2>
+                        <p>Important daycare announcements and reminders.</p>
+                    </div>
+                </div>
+
+                <div class="content-panel">
+
+                    <h3>Parents' Meeting</h3>
+                    <p><strong>Date:</strong> 20 November 2026</p>
+
+                    <p>
+                        Dear parents, you are invited to attend a parents'
+                        meeting at the daycare centre at 10:00 AM.
+                    </p>
+
+                </div>
+
+                <div class="content-panel">
+
+                    <h3>November Fee Reminder</h3>
+                    <p><strong>Date:</strong> 10 November 2026</p>
+
+                    <p>
+                        This is a reminder to parents to clear any
+                        outstanding daycare fees before the end of the month.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- FOOTER -->
+            <footer class="dashboard-footer">
+                <p>
+                    For assistance, please contact the daycare administration.
+                </p>
+            </footer>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="js/prototype.js"></script>
+
+</body>
+</html>

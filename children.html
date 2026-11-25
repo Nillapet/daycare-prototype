@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Child Records | Daycare Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="dashboard-layout">
+
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <h2>DayCare</h2>
+            <p>Management System</p>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="admin-dashboard.html">Dashboard</a>
+            <a href="children.html" class="active">Child Records</a>
+            <a href="staff.html">Staff Records</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="payments.html">Fees and Payments</a>
+            <a href="notices.html">Notices</a>
+            <a href="index.html">Sign Out</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <h2>Child Records</h2>
+                <p>Register and manage children enrolled at the daycare.</p>
+            </div>
+            <div class="user-info">
+                <span>Administrator</span>
+            </div>
+        </header>
+
+        <section class="welcome-banner">
+            <div>
+                <h1>Children Management</h1>
+                <p>Maintain child registration details and parent or guardian information.</p>
+            </div>
+        </section>
+
+        <section class="stats-grid">
+            <div class="stat-card">
+                <h3>Total Registered Children</h3>
+                <h2 id="totalChildren">48</h2>
+                <p>Children enrolled</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Baby Class</h3>
+                <h2>12</h2>
+                <p>Registered children</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Toddlers</h3>
+                <h2>18</h2>
+                <p>Registered children</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Pre-Primary</h3>
+                <h2>18</h2>
+                <p>Registered children</p>
+            </div>
+        </section>
+
+        <!-- REGISTRATION FORM -->
+        <section class="panel">
+            <div class="panel-header">
+                <h2>Register a New Child</h2>
+                <span>Child Registration</span>
+            </div>
+
+            <form id="childForm">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="childName">Child's Full Name</label>
+                        <input type="text" id="childName" required
+                               placeholder="Enter child's full name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="childAge">Age</label>
+                        <input type="number" id="childAge" min="1" max="6"
+                               required placeholder="Enter age">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="childClass">Class</label>
+                        <select id="childClass" required>
+                            <option value="">Select class</option>
+                            <option value="Baby Class">Baby Class</option>
+                            <option value="Toddlers">Toddlers</option>
+                            <option value="Pre-Primary">Pre-Primary</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="parentName">Parent / Guardian Name</label>
+                        <input type="text" id="parentName" required
+                               placeholder="Enter parent or guardian name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="parentPhone">Parent / Guardian Phone</label>
+                        <input type="tel" id="parentPhone" required
+                               pattern="[0-9+ ]{10,15}"
+                               placeholder="e.g. 0712345678">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="registrationDate">Registration Date</label>
+                        <input type="date" id="registrationDate" required>
+                    </div>
+
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="primary-button">
+                        Register Child
+                    </button>
+                </div>
+
+                <p id="childMessage" class="form-message"></p>
+
+            </form>
+        </section>
+
+        <!-- CHILD RECORDS TABLE -->
+        <section class="panel">
+            <div class="panel-header">
+                <h2>Registered Children</h2>
+                <span>Child Records</span>
+            </div>
+
+            <div class="table-responsive">
+                <table class="data-table" id="childrenTable">
+                    <thead>
+                        <tr>
+                            <th>Child ID</th>
+                            <th>Child Name</th>
+                            <th>Age</th>
+                            <th>Class</th>
+                            <th>Parent / Guardian</th>
+                            <th>Phone Number</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="childrenTableBody">
+                        <tr>
+                            <td>CH001</td>
+                            <td>Amara Wanjiku</td>
+                            <td>3</td>
+                            <td>Toddlers</td>
+                            <td>Mary Wanjiku</td>
+                            <td>0712345678</td>
+                        </tr>
+
+                        <tr>
+                            <td>CH002</td>
+                            <td>Brian Otieno</td>
+                            <td>5</td>
+                            <td>Pre-Primary</td>
+                            <td>Peter Otieno</td>
+                            <td>0723456789</td>
+                        </tr>
+
+                        <tr>
+                            <td>CH003</td>
+                            <td>Faith Akinyi</td>
+                            <td>2</td>
+                            <td>Baby Class</td>
+                            <td>Jane Akinyi</td>
+                            <td>0734567890</td>
+                        </tr>
+
+                        <tr>
+                            <td>CH004</td>
+                            <td>Daniel Mwangi</td>
+                            <td>3</td>
+                            <td>Toddlers</td>
+                            <td>Grace Mwangi</td>
+                            <td>0745678901</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <div class="back-link">
+            <a href="admin-dashboard.html">← Back to Administrator Dashboard</a>
+        </div>
+
+    </main>
+</div>
+
+<script src="js/prototype.js"></script>
+</body>
+</html>

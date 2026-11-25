@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Records | Daycare Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="dashboard-layout">
+
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <h2>DayCare</h2>
+            <p>Management System</p>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="admin-dashboard.html">Dashboard</a>
+            <a href="children.html">Child Records</a>
+            <a href="staff.html" class="active">Staff Records</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="payments.html">Fees and Payments</a>
+            <a href="notices.html">Notices</a>
+            <a href="index.html">Sign Out</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <h2>Staff Management</h2>
+                <p>Manage daycare employees and their information.</p>
+            </div>
+            <div class="user-info">
+                <span>Administrator</span>
+            </div>
+        </header>
+
+        <section class="welcome-banner">
+            <div>
+                <h1>Staff Records</h1>
+                <p>Register staff members and maintain their employment information.</p>
+            </div>
+        </section>
+
+        <section class="stats-grid">
+
+            <div class="stat-card">
+                <h3>Total Staff</h3>
+                <h2 id="totalStaff">8</h2>
+                <p>Registered employees</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Teachers</h3>
+                <h2>5</h2>
+                <p>Teaching staff</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Administrators</h3>
+                <h2>1</h2>
+                <p>Administrative staff</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Support Staff</h3>
+                <h2>2</h2>
+                <p>Other daycare employees</p>
+            </div>
+
+        </section>
+
+        <!-- STAFF REGISTRATION -->
+        <section class="panel">
+
+            <div class="panel-header">
+                <h2>Register New Staff Member</h2>
+                <span>Staff Registration</span>
+            </div>
+
+            <form id="staffForm">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="staffFullName">Full Name</label>
+                        <input type="text" id="staffFullName" required
+                               placeholder="Enter staff member's name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="staffEmail">Email Address</label>
+                        <input type="email" id="staffEmail" required
+                               placeholder="Enter email address">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="staffPhone">Phone Number</label>
+                        <input type="tel" id="staffPhone" required
+                               pattern="[0-9+ ]{10,15}"
+                               placeholder="e.g. 0712345678">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="staffRole">Staff Role</label>
+                        <select id="staffRole" required>
+                            <option value="">Select role</option>
+                            <option value="Teacher">Teacher</option>
+                            <option value="Administrator">Administrator</option>
+                            <option value="Caregiver">Caregiver</option>
+                            <option value="Support Staff">Support Staff</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="staffDate">Date of Employment</label>
+                        <input type="date" id="staffDate" required>
+                    </div>
+
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="primary-button">
+                        Register Staff
+                    </button>
+                </div>
+
+                <p id="staffMessage" class="form-message"></p>
+
+            </form>
+        </section>
+
+        <!-- STAFF LIST -->
+        <section class="panel">
+
+            <div class="panel-header">
+                <h2>Registered Staff Members</h2>
+                <span>Staff Directory</span>
+            </div>
+
+            <div class="table-responsive">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Staff ID</th>
+                            <th>Full Name</th>
+                            <th>Email</th>
+                            <th>Phone Number</th>
+                            <th>Role</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="staffTableBody">
+
+                        <tr>
+                            <td>ST001</td>
+                            <td>Grace Atieno</td>
+                            <td>grace@example.com</td>
+                            <td>0712345678</td>
+                            <td>Teacher</td>
+                        </tr>
+
+                        <tr>
+                            <td>ST002</td>
+                            <td>Peter Kamau</td>
+                            <td>peter@example.com</td>
+                            <td>0723456789</td>
+                            <td>Administrator</td>
+                        </tr>
+
+                        <tr>
+                            <td>ST003</td>
+                            <td>Lucy Njeri</td>
+                            <td>lucy@example.com</td>
+                            <td>0734567890</td>
+                            <td>Caregiver</td>
+                        </tr>
+
+                        <tr>
+                            <td>ST004</td>
+                            <td>James Otieno</td>
+                            <td>james@example.com</td>
+                            <td>0745678901</td>
+                            <td>Support Staff</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+        <div class="back-link">
+            <a href="admin-dashboard.html">← Back to Administrator Dashboard</a>
+        </div>
+
+    </main>
+</div>
+
+<script src="js/prototype.js"></script>
+</body>
+</html>

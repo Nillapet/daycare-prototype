@@ -1,0 +1,258 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Record Attendance | Daycare Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="dashboard-layout">
+
+    <aside class="sidebar">
+
+        <div class="sidebar-brand">
+            <h2>DayCare</h2>
+            <p>Management System</p>
+        </div>
+
+        <nav class="sidebar-nav" id="attendanceSidebarNav">
+            <!-- Navigation is displayed according to the logged-in role. -->
+        </nav>
+
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <h2>Attendance Management</h2>
+                <p>Record and manage children's daily attendance.</p>
+            </div>
+
+            <div class="user-info">
+                <span id="attendanceRole">Daycare Staff</span>
+            </div>
+        </header>
+
+        <section class="welcome-banner">
+            <div>
+                <h1>Daily Attendance</h1>
+                <p>Select the attendance status for each child and save the records.</p>
+            </div>
+        </section>
+
+        <section class="panel">
+
+            <div class="panel-header">
+                <div>
+                    <h2>Children's Attendance</h2>
+                    <p id="attendanceDate">Today's attendance records</p>
+                </div>
+            </div>
+
+            <form id="attendanceForm">
+
+                <div class="table-responsive">
+                    <table class="data-table">
+
+                        <thead>
+                            <tr>
+                                <th>Child ID</th>
+                                <th>Child Name</th>
+                                <th>Class</th>
+                                <th>Attendance Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>CH001</td>
+                                <td>Amara Wanjiku</td>
+                                <td>Toddlers</td>
+                                <td>
+                                    <select class="attendance-status" name="CH001">
+                                        <option value="Present">Present</option>
+                                        <option value="Absent">Absent</option>
+                                        <option value="Late">Late</option>
+                                    </select>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>CH002</td>
+                                <td>Brian Otieno</td>
+                                <td>Pre-Primary</td>
+                                <td>
+                                    <select class="attendance-status" name="CH002">
+                                        <option value="Present">Present</option>
+                                        <option value="Absent">Absent</option>
+                                        <option value="Late">Late</option>
+                                    </select>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>CH003</td>
+                                <td>Faith Akinyi</td>
+                                <td>Baby Class</td>
+                                <td>
+                                    <select class="attendance-status" name="CH003">
+                                        <option value="Present">Present</option>
+                                        <option value="Absent">Absent</option>
+                                        <option value="Late">Late</option>
+                                    </select>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>CH004</td>
+                                <td>Daniel Mwangi</td>
+                                <td>Toddlers</td>
+                                <td>
+                                    <select class="attendance-status" name="CH004">
+                                        <option value="Present">Present</option>
+                                        <option value="Absent">Absent</option>
+                                        <option value="Late">Late</option>
+                                    </select>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>CH005</td>
+                                <td>Grace Njeri</td>
+                                <td>Pre-Primary</td>
+                                <td>
+                                    <select class="attendance-status" name="CH005">
+                                        <option value="Present">Present</option>
+                                        <option value="Absent">Absent</option>
+                                        <option value="Late">Late</option>
+                                    </select>
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="primary-button">
+                        Save Attendance
+                    </button>
+                </div>
+
+                <p id="attendanceMessage" class="form-message"></p>
+
+            </form>
+
+        </section>
+
+        <section class="stats-grid">
+
+            <div class="stat-card">
+                <h3>Present</h3>
+                <h2 id="presentCount">5</h2>
+                <p>Children present</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Absent</h3>
+                <h2 id="absentCount">0</h2>
+                <p>Children absent</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Late</h3>
+                <h2 id="lateCount">0</h2>
+                <p>Children arriving late</p>
+            </div>
+
+        </section>
+
+        <div class="back-link">
+            <a href="staff-dashboard.html" id="attendanceBackLink">
+                ← Back to Staff Dashboard
+            </a>
+        </div>
+
+    </main>
+
+</div>
+
+<script src="js/prototype.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    // Retrieve the currently logged-in user.
+    let currentUser = {};
+
+    try {
+        currentUser = JSON.parse(
+            sessionStorage.getItem("daycareUser")
+        ) || {};
+    } catch (error) {
+        currentUser = {};
+    }
+
+    // Identify the user's role.
+    const userRole = String(
+        currentUser.role ||
+        currentUser.userType ||
+        currentUser.accountType ||
+        "staff"
+    ).toLowerCase();
+
+    const isAdmin =
+        userRole === "admin" ||
+        userRole === "administrator";
+
+    const sidebarNav = document.getElementById("attendanceSidebarNav");
+    const attendanceRole = document.getElementById("attendanceRole");
+    const backLink = document.getElementById("attendanceBackLink");
+
+    if (isAdmin) {
+
+        // Administrator navigation.
+        sidebarNav.innerHTML = `
+            <a href="admin-dashboard.html">Dashboard</a>
+            <a href="children.html">Child Records</a>
+            <a href="staff.html">Staff Records</a>
+            <a href="attendance.html" class="active">Attendance</a>
+            <a href="payments.html">Fees and Payments</a>
+            <a href="notices.html">Notices</a>
+            <a href="reports.html">Reports</a>
+            <a href="index.html">Sign Out</a>
+        `;
+
+        attendanceRole.textContent = "Administrator";
+
+        backLink.href = "admin-dashboard.html";
+        backLink.textContent = "← Back to Administrator Dashboard";
+
+    } else {
+
+        // Staff navigation.
+        sidebarNav.innerHTML = `
+            <a href="staff-dashboard.html">Dashboard</a>
+            <a href="attendance.html" class="active">Record Attendance</a>
+            <a href="notices.html">Notices</a>
+            <a href="index.html">Sign Out</a>
+        `;
+
+        attendanceRole.textContent = "Daycare Staff";
+
+        backLink.href = "staff-dashboard.html";
+        backLink.textContent = "← Back to Staff Dashboard";
+
+    }
+
+});
+</script>
+
+</body>
+</html>

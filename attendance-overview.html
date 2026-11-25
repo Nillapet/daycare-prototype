@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Overview | Daycare Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="dashboard-layout">
+
+    <aside class="sidebar">
+
+        <div class="sidebar-brand">
+            <h2>DayCare</h2>
+            <p>Management System</p>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="admin-dashboard.html">Dashboard</a>
+            <a href="children.html">Child Records</a>
+            <a href="staff.html">Staff Records</a>
+            <a href="attendance-overview.html" class="active">Attendance Overview</a>
+            <a href="payments.html">Fees and Payments</a>
+            <a href="notices.html">Notices</a>
+            <a href="reports.html">Reports</a>
+            <a href="index.html">Sign Out</a>
+        </nav>
+
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <h2>Attendance Overview</h2>
+                <p>Monitor children's attendance across all daycare classes.</p>
+            </div>
+
+            <div class="user-info">
+                <span>Administrator</span>
+            </div>
+        </header>
+
+        <section class="welcome-banner">
+            <div>
+                <h1>Attendance Summary</h1>
+                <p>Review daily attendance records and monitor attendance across the daycare.</p>
+            </div>
+        </section>
+
+        <section class="panel">
+
+            <div class="panel-header">
+                <div>
+                    <h2>Daily Attendance Overview</h2>
+                    <p id="overviewDate">Attendance summary for today</p>
+                </div>
+            </div>
+
+            <p class="form-message">
+                Demonstration data for the daycare attendance overview.
+            </p>
+
+        </section>
+
+        <section class="stats-grid">
+
+            <div class="stat-card">
+                <h3>Present</h3>
+                <h2>42</h2>
+                <p>Children present today</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Absent</h3>
+                <h2>5</h2>
+                <p>Children absent today</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Late</h3>
+                <h2>3</h2>
+                <p>Children who arrived late</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Total Children</h3>
+                <h2>50</h2>
+                <p>Children registered</p>
+            </div>
+
+        </section>
+
+        <section class="panel">
+
+            <div class="panel-header">
+                <div>
+                    <h2>Class Attendance Summary</h2>
+                    <p>Attendance breakdown for each daycare class.</p>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+
+                <table class="data-table">
+
+                    <thead>
+                        <tr>
+                            <th>Class</th>
+                            <th>Total Children</th>
+                            <th>Present</th>
+                            <th>Absent</th>
+                            <th>Late</th>
+                            <th>Attendance Rate</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Baby Class</td>
+                            <td>15</td>
+                            <td>12</td>
+                            <td>2</td>
+                            <td>1</td>
+                            <td>80%</td>
+                        </tr>
+
+                        <tr>
+                            <td>Toddlers</td>
+                            <td>17</td>
+                            <td>15</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>88.2%</td>
+                        </tr>
+
+                        <tr>
+                            <td>Pre-Primary</td>
+                            <td>18</td>
+                            <td>15</td>
+                            <td>2</td>
+                            <td>1</td>
+                            <td>83.3%</td>
+                        </tr>
+
+                        <tr>
+                            <th>Overall</th>
+                            <th>50</th>
+                            <th>42</th>
+                            <th>5</th>
+                            <th>3</th>
+                            <th>84%</th>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+        <section class="panel">
+
+            <div class="panel-header">
+                <div>
+                    <h2>Administrator Responsibilities</h2>
+                    <p>Use the attendance overview to monitor daycare operations.</p>
+                </div>
+            </div>
+
+            <ul>
+                <li>Monitor attendance across all daycare classes.</li>
+                <li>Review the number of children present, absent and late.</li>
+                <li>Identify classes with low attendance.</li>
+                <li>Use attendance information when preparing daycare reports.</li>
+            </ul>
+
+        </section>
+
+        <div class="back-link">
+            <a href="admin-dashboard.html">← Back to Administrator Dashboard</a>
+        </div>
+
+    </main>
+
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const dateElement = document.getElementById("overviewDate");
+
+    const today = new Date();
+
+    dateElement.textContent =
+        "Attendance summary for " +
+        today.toLocaleDateString("en-KE", {
+            weekday: "long",
+            day: "numeric",
+            month: "long",
+            year: "numeric"
+        });
+
+});
+</script>
+
+</body>
+</html>
